@@ -6,7 +6,7 @@ import CatalogSection from "./components/catalog/Block";
 export default function App() {
 	const [ data, setData ] = useState( {} )
 
-	document.body.classList[ Object.keys( data ).length === 0 ? 'add' : 'remove' ]('is-hide')
+	document.body.classList[ Object.keys( data ).length === 0 ? 'remove' : 'add' ]('is-show')
 
 	async function getData() {
 		await fetch('./catalog-config.json')
@@ -19,7 +19,8 @@ export default function App() {
 	useEffect( () => { getData() }, [] )
 
 	return (
-		<div className={ `wrapper` }>
+		<div className="wrapper">
+			{/* <div className="loader"></div> */}
 			<Header data={ data }></Header>
 			<div className="content">
 				<section className="section catalog">

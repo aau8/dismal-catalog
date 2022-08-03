@@ -79,14 +79,41 @@ body {
 	color: $text-primary;
 	line-height: 1.2;
 	background: $frame-light;
+	opacity: 0;
 
     ._lock & {
         overflow: hidden;
 		touch-action: none;
     }
 
-	&.is-hide {
-		display: none;
+	// & .wrapper {
+	// 	opacity: 0;
+	// }
+
+	&.is-show {
+		animation: showBody ease-in-out .25s forwards;
+
+		@keyframes showBody {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		// & .loader {
+		// 	animation: hideLoader ease-in-out .5s forwards;
+
+		// 	@keyframes hideLoader {
+		// 		from {
+		// 			opacity: 1;
+		// 		}
+		// 		to {
+		// 			opacity: 0;
+		// 		}
+		// 	}
+		// }
 	}
 }
 
