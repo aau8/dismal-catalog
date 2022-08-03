@@ -1,0 +1,60 @@
+.page-link {
+	--padding-indent: 24px;
+	--padding-attic: 16px;
+
+	width: 100%;
+	min-height: 70px;
+	display: flex;
+	align-items: center;
+	background: $light;
+	border: 1px solid $border-line;
+	border-radius: $radius-s;
+	transition: $tr;
+
+	@media (any-hover: hover) {
+
+		&:hover {
+			box-shadow: 0 4px 15px rgb(0,0,0,.08);
+		}
+
+		&:active {
+			box-shadow: none;
+		}
+	}
+}
+
+.page-link__content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: var(--padding-attic) var(--padding-indent);
+
+	&:active {
+		color: $accent;
+	}
+
+	@media (any-hover: hover) {
+
+		&:hover {
+
+			& .page-link__title {
+				color: $accent;
+			}
+		}
+
+		&:active {
+
+		}
+	}
+}
+
+.page-link__title {
+	font-size: 17px;
+	font-weight: 600;
+	transition: $tr;
+}
+
+.page-link__filename {
+	font-size: 13px;
+	color: $text-second;
+}

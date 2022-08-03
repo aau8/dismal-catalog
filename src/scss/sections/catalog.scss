@@ -1,0 +1,41 @@
+.catalog {
+
+}
+
+.catalog__body {
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-bottom: 48px;
+		}
+	}
+}
+
+// Блок каталога
+.b-catalog {
+
+}
+
+.b-catalog__header {
+	margin-bottom: 20px;
+}
+
+.b-catalog__header-content {
+
+}
+
+.b-catalog__title {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.b-catalog__body {
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+}
