@@ -21,8 +21,15 @@ export default function App() {
 
 	const [ pages, setPages ] = useState([])
 
-	if ( window.matchMedia('(prefers-color-scheme: dark)').matches && (localStorage.getItem('theme') !== null && localStorage.getItem('theme') === 'dark') ) {
+	if ( window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		document.documentElement.setAttribute('data-dark-theme', '')
+	}
+
+	if ( localStorage.getItem('theme') === 'dark' ) {
+		document.documentElement.setAttribute('data-dark-theme', '')
+	}
+	else if ( localStorage.getItem('theme') === 'light' ) {
+		document.documentElement.removeAttribute('data-dark-theme')
 	}
 
 	return (
