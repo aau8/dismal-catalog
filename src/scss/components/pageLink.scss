@@ -9,7 +9,7 @@
 	background: var(--light);
 	border: 1px solid var(--border-line);
 	border-radius: $radius-s;
-	transition: $tr;
+	transition: box-shadow $tr;
 
 	@media (any-hover: hover) {
 
