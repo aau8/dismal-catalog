@@ -4,19 +4,26 @@ import Footer from "./components/Footer";
 import CatalogSection from "./components/catalog/Block";
 
 export default function App() {
-	const [ data, setData ] = useState( {} )
+	// const [ data, setData ] = useState( {} )
+	const data = window.config
 
-	document.body.classList[ Object.keys( data ).length === 0 ? 'remove' : 'add' ]('is-show')
+	// document.body.classList[ Object.keys( data ).length === 0 ? 'remove' : 'add' ]('is-show')
 
-	async function getData() {
-		await fetch('./catalog-config.json')
-		.then( res => res.json() )
-		.then( catalogData => {
-			setData( catalogData )
-		} )
+	// async function getData() {
+	// 	await fetch('./catalog-config.json')
+	// 	.then( res => res.json() )
+	// 	.then( catalogData => {
+	// 		setData( catalogData )
+	// 	} )
+	// }
+
+	// useEffect( () => { getData() }, [] )
+
+	const [ pages, setPages ] = useState([])
+
+	if ( window.matchMedia('(prefers-color-scheme: dark)').matches && (localStorage.getItem('theme') !== null && localStorage.getItem('theme') === 'dark') ) {
+		document.documentElement.setAttribute('data-dark-theme', '')
 	}
-
-	useEffect( () => { getData() }, [] )
 
 	return (
 		<div className="wrapper">

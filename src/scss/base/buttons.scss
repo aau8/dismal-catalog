@@ -26,11 +26,11 @@
     @media (any-hover: hover) {
 
         &:hover {
-            color: $accent;
+            color: var(--accent);
         }
     }
 
     &:active {
-        color: brig-color($accent, active);
+        color: var(--accent-active);
     }
 }

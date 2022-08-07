@@ -19,10 +19,10 @@
     &.is-valid {
 
         & .select-input__title {
-            color: $text-primary;
+            color: var(--text-primary);
         }
     }
-    
+
     &_s {
 
         & .select-input {
@@ -37,7 +37,7 @@
     height: 40px;
     display: flex;
     align-items: center;
-    border: 1px solid $border-line;
+    border: 1px solid var(--border-line);
     border-radius: 8px;
     padding: 0;
     cursor: pointer;
@@ -133,7 +133,7 @@
     }
 
     &:hover {
-        
+
         @media (any-hover: hover) {
             background: brig-color(#000, .05);
         }

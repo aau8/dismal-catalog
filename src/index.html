@@ -5,11 +5,41 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="./style.css">
+	<script>
+		var config = {
+			"list": {
+				"Общие страниц": {
+					"Главная страница": "main.html",
+					"О нас": "about.html"
+				},
+				"Личный кабинет": {
+					"Главная страница ЛК": "cabinet.html",
+					"Корзина": "cart.html",
+					"Заказы": "orders.html"
+				}
+			},
+			"company": {
+				"logo": "./img/logo.svg",
+				"title": "Справочник по верстке"
+			},
+			"author": {
+				"name": "Артем Угрюмов",
+				"quote": "\"Для связи предпочтительнее Telegram\"",
+				"socials": {
+					"telegram": "https://t.me/tus_8",
+					"website": "https://ugryumov.com",
+					"vk": "",
+					"github": "https://github.com/artemyg0811"
+				}
+			}
+		}
+	</script>
+
+	<link id="css-link" rel="stylesheet" href="./dismal-assets/style.css">
 </head>
 <body>
 	<div id="root"></div>
 
-	<script src="./bundle.js"></script>
+	<script id="js-script" src="./dismal-assets/bundle.js"></script>
 </body>
 </html>

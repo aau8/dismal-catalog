@@ -10,11 +10,11 @@
 .acc {
     display: block;
     transition: $tr;
-    border-top: 1px solid $text-primary;
-    border-bottom: 1px solid $text-primary;
+    border-top: 1px solid var(--text-primary);
+    border-bottom: 1px solid var(--text-primary);
 
     &.is-show {
-		
+
         & > .acc__toggler {
 
             & .acc__toggler-icon {

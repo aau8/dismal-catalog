@@ -6,8 +6,8 @@
 	min-height: 70px;
 	display: flex;
 	align-items: center;
-	background: $light;
-	border: 1px solid $border-line;
+	background: var(--light);
+	border: 1px solid var(--border-line);
 	border-radius: $radius-s;
 	transition: $tr;
 
@@ -30,7 +30,7 @@
 	padding: var(--padding-attic) var(--padding-indent);
 
 	&:active {
-		color: $accent;
+		color: var(--accent);
 	}
 
 	@media (any-hover: hover) {
@@ -38,7 +38,7 @@
 		&:hover {
 
 			& .page-link__title {
-				color: $accent;
+				color: var(--accent);
 			}
 		}
 
@@ -56,5 +56,5 @@
 
 .page-link__filename {
 	font-size: 13px;
-	color: $text-second;
+	color: var(--text-second);
 }

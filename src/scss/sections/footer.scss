@@ -1,18 +1,31 @@
 .footer {
 	--footer-height: 80px;
 
-	height: var(--footer-height);
+	min-height: var(--footer-height);
 	width: 100%;
-	border-top: 1px solid $border-line;
+	display: flex;
+	background: var(--light);
+	border-top: 1px solid var(--border-line);
 }
 
 .footer__wrap {
 	width: 100%;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	padding: 0 48px;
+	padding: 16px 48px;
+
+	@media (max-width: $tablet) {
+		flex-direction: column;
+		text-align: center;
+
+		& > * {
+
+			&:not(:last-child) {
+				margin: 0 0 16px 0;
+			}
+		}
+	}
 }
 
 // Подпись автора
@@ -20,11 +33,16 @@
 	display: flex;
 	flex-direction: column;
 	margin-right: auto;
+
+	@media (max-width: $tablet) {
+		width: 100%;
+		align-items: center;
+	}
 }
 
 .footer-signa__title {
 	font-size: 12px;
-	color: $text-second;
+	color: var(--text-second);
 }
 
 .footer-signa__author {
@@ -32,10 +50,25 @@
 	margin-top: 2px;
 }
 
+.footer__contacts {
+	display: flex;
+	align-items: center;
+	margin-left: 24px;
+
+	@media (max-width: $tablet) {
+		flex-direction: column-reverse;
+		margin: 0;
+	}
+}
+
 // Цитата автора
 .footer-quote {
 	font-size: 14px;
 	font-style: italic;
-	color: $text-second;
+	color: var(--text-second);
 	text-align: right;
+
+	@media (max-width: $tablet) {
+		text-align: center;
+	}
 }

@@ -1,13 +1,16 @@
 .socials {
+	margin-left: 24px;
 
+	@media (max-width: $tablet) {
+		margin: 0 0 12px 0;
+	}
 }
 
 .socials__list {
 	display: flex;
 	align-items: center;
-	flex-wrap: wrap;
+	// flex-wrap: wrap;
 	margin: -8px;
-	margin-left: 24px;
 
 	& > * {
 		margin: 8px;
@@ -21,7 +24,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #F5F5F5;
+	background: var(--icon-bg);
 	border-radius: $radius-s;
 
 	&[data-social=telegram] {
@@ -46,12 +49,12 @@
 		height: 62%;
 		display: block;
 		@include mask( center/contain no-repeat var(--social) );
-		background: $icon-dark;
+		background: var(--icon-dark);
 		transition: $tr;
 	}
 
 	&:active {
-		background: create-rgba($icon-dark, .8);
+		background: var(--icon-dark-hover);
 	}
 
 	@media (any-hover: hover) {
@@ -59,12 +62,12 @@
 		&:hover {
 
 			&::before {
-				background: create-rgba($icon-dark, .8);
+				background: var(--icon-dark-hover);
 			}
 		}
 
 		&:active {
-			background: $icon-dark;
+			background: var(--icon-dark);
 		}
 	}
 }

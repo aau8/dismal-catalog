@@ -13,17 +13,19 @@ export default function Footer( { data } ) {
 						<div className="footer-signa__author">{ data?.author?.name }</div>
 					</div>
 				}
-				{
-					data?.author?.quote !== "" &&
-					<p className="footer-quote">{ data?.author?.quote }</p>
-				}
-				<div className="socials">
-					<div className="socials__list">
-						{
-							Object.entries( data?.author?.socials ? data?.author?.socials : {} ).filter( social => social[1] !== '' ).map( ( social, index ) => {
-								return <Social data={ social } key={ index }></Social>
-							} )
-						}
+				<div className="footer__contacts">
+					{
+						data?.author?.quote !== "" &&
+						<p className="footer-quote">{ data?.author?.quote }</p>
+					}
+					<div className="socials">
+						<div className="socials__list">
+							{
+								Object.entries( data?.author?.socials ? data?.author?.socials : {} ).filter( social => social[1] !== '' ).map( ( social, index ) => {
+									return <Social data={ social } key={ index }></Social>
+								} )
+							}
+						</div>
 					</div>
 				</div>
 			</div>

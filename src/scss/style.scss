@@ -13,9 +13,13 @@ $text-primary: #333;
 $text-second: #858585;
 $text-label: #BDBDBD;
 $accent: #D86B6B;
+$accent-hover: brig-color($accent, hover);
+$accent-active: brig-color($accent, active);
 $light: #fff;
 
 $icon-dark: #5C5C5C;
+$icon-dark-hover: create-rgba($icon-dark, .8);
+$icon-bg: #F5F5F5;
 
 // Задний фон разделов
 // $frame-dark: #080A0A;
@@ -34,19 +38,30 @@ $input-placeholder: brig-color(#000, .3);
 // Уведомления
 $error: #EB5757;
 
+:root {
+	--text-primary: #{$text-primary};
+	--text-second: #{$text-second};
+	--text-label: #{$text-label};
+	--accent: #{$accent};
+	--accent-hover: #{$accent-hover};
+	--accent-active: #{$accent-active};
+	--light: #{$light};
+	--icon-dark: #{$icon-dark};
+	--icon-dark-hover: #{$icon-dark-hover};
+	--icon-bg: #{$icon-bg};
+	--frame-light: #{$frame-light};
+	--border-line: #{$border-line};
+}
+
 // ================ Colors End ================
 
 
 // ================ Responsive Start ================
 $min-width: 320px;
 $max-width: 1920px;
-$max-width-container: 990px;
+$max-width-container: 990;
 $container-padding: 48;
 $container-width: $max-width-container + $container-padding;
-
-:root {
-	--container-padding: #{math.div($container-padding, 2) + 'px'};
-}
 
 $laptop-l: 1500px;
 $laptop: 1100px;
@@ -55,6 +70,22 @@ $mobile-l: 450px;
 $mobile-m: 390px;
 $mobile-s: 330px;
 $hide-menu: $tablet;
+
+:root {
+	--container-padding: #{math.div($container-padding, 2) + 'px'};
+
+	@media (max-width: $tablet) {
+		--container-padding: 30px;
+	}
+
+    @media (max-width: $mobile-l) {
+		--container-padding: 20px;
+    }
+
+    @media (max-width: $mobile-m) {
+		--container-padding: 16px;
+    }
+}
 // ================ Responsive End ================
 
 
@@ -72,14 +103,35 @@ $tr: .3s;
 	height: 100%;
 }
 
+html {
+
+	&[data-dark-theme] {
+
+		&:root {
+			--text-primary: #DAE0E5;
+			--text-second: #8B949E;
+			// --text-label: #{$text-label};
+			// --accent: #{$accent};
+			// --accent-hover: #{$accent-hover};
+			// --accent-active: #{$accent-active};
+			--light: #0D1117;
+			--icon-dark: #8B949E;
+			--icon-bg: #21262D;
+			// --icon-dark-hover: #{$icon-dark-hover};
+			--frame-light: #010409;
+			--border-line: #30363D;
+		}
+	}
+}
+
 body {
 	font-family: $ff-main;
 	font-size: 14px;
 	font-weight: 500;
-	color: $text-primary;
+	color: var(--text-primary);
 	line-height: 1.2;
-	background: $frame-light;
-	opacity: 0;
+	background: var(--frame-light);
+	// opacity: 0;
 
     ._lock & {
         overflow: hidden;
@@ -90,31 +142,18 @@ body {
 	// 	opacity: 0;
 	// }
 
-	&.is-show {
-		animation: showBody ease-in-out .25s forwards;
+	// &.is-show {
+	// 	animation: showBody ease-in-out .25s forwards;
 
-		@keyframes showBody {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
-
-		// & .loader {
-		// 	animation: hideLoader ease-in-out .5s forwards;
-
-		// 	@keyframes hideLoader {
-		// 		from {
-		// 			opacity: 1;
-		// 		}
-		// 		to {
-		// 			opacity: 0;
-		// 		}
-		// 	}
-		// }
-	}
+	// 	@keyframes showBody {
+	// 		from {
+	// 			opacity: 0;
+	// 		}
+	// 		to {
+	// 			opacity: 1;
+	// 		}
+	// 	}
+	// }
 }
 
 .wrapper {
@@ -151,24 +190,12 @@ body {
 */
 [class*="__container"] {
     @if ($max-width-container>0) {
-        max-width: $max-width-container;
+        max-width: $max-width-container + px;
         box-sizing: content-box;
         margin: 0 auto;
     }
     @if ($container-padding>0) {
         padding: 0 var(--container-padding);
-    }
-
-	@media (max-width: $tablet) {
-		--container-padding: 30px;
-	}
-
-    @media (max-width: $mobile-l) {
-		--container-padding: 20px;
-    }
-
-    @media (max-width: $mobile-m) {
-		--container-padding: 16px;
     }
 }
 
